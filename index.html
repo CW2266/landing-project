@@ -3,72 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>臺灣旅人登陸計劃 - 您的專屬客製旅遊</title>
-    <!-- 引入 Tailwind CSS 讓介面大氣漂亮 -->
+    <title>臺灣旅人登陸計劃 - 專屬私人訂製</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&family=Noto+Sans+TC:wght@400;700;900&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; scroll-behavior: smooth; }
+        .serif { font-family: 'Noto Serif TC', serif; }
+        .nav-active { color: #f97316; font-weight: 900; }
+        .hero-bg { background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('harbin_main.jpg'); background-size: cover; background-position: center; }
+        .container-custom { max-width: 1200px; margin: 0 auto; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-white text-slate-900">
 
-    <!-- 導覽列：左上 Logo 與名字 -->
-    <nav class="fixed w-full bg-white/90 backdrop-blur shadow-sm z-50 px-6 py-3 flex justify-between items-center">
-        <div class="flex items-center space-x-3">
-            <img src="tt.jpg" alt="Logo" class="h-10"> <!-- 放上你設計的陸字Logo -->
-            <span class="text-xl font-bold text-blue-900">臺灣旅人登陸計劃</span>
-        </div>
-        <a href="#booking" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-bold transition">立即預約</a>
-    </nav>
-
-    <!-- 影片區：自動播放與預覽 -->
-    <section class="pt-20">
-        <div class="video-container shadow-2xl">
-            <!-- 替換成你的 YouTube ID，設定 mute=1 以便自動播放 -->
-            <iframe src="https://www.youtube.com/embed/你的影片ID?autoplay=1&mute=1&loop=1&playlist=你的影片ID" 
-                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <!-- 宣傳文案區 -->
-    <section class="max-w-4xl mx-auto px-6 py-16 text-center">
-        <h2 class="text-4xl font-extrabold text-blue-900 mb-6">不只是旅行，是一場完美的「登陸」</h2>
-        <p class="text-lg leading-relaxed text-gray-600 mb-8">
-            厭倦了趕路的遊覽車、不想再為支付寶和打車軟體煩惱？<br>
-            我們由 **AI 系專業團隊** 領軍，為您掃除一切數位障礙。從哈爾濱的冰雪地景到長沙的人間煙火，<br>
-            我們提供 100% 的客製化行程規劃。您只需帶上行李，剩下的交給我們。
-        </p>
-        <div class="grid md:grid-cols-3 gap-8 text-left italic text-blue-800">
-            <div class="p-4 border-l-4 border-orange-400 bg-orange-50">✓ 專業在地軟體支援</div>
-            <div class="p-4 border-l-4 border-orange-400 bg-orange-50">✓ 私人專車接送服務</div>
-            <div class="p-4 border-l-4 border-orange-400 bg-orange-50">✓ 隱藏版在地美食清單</div>
-        </div>
-    </section>
-
-    <!-- 費用與訂購區 -->
-    <section id="booking" class="bg-blue-900 py-16 text-white text-center">
-        <div class="max-w-2xl mx-auto px-6">
-            <h3 class="text-2xl mb-2">基礎服務費用</h3>
-            <div class="text-6xl font-bold mb-6">NT$ 12,800 <span class="text-lg font-normal">起</span></div>
-            <p class="mb-10 text-blue-200">費用包含：數位工具實名協助、全程路線規劃顧問、專屬司導對接。</p>
-            
-            <!-- 聯絡表單：溝通客製化需求 -->
-            <div class="bg-white p-8 rounded-xl text-gray-900 text-left shadow-xl">
-                <h4 class="text-xl font-bold mb-4">告訴我們您的夢想行程</h4>
-                <form action="#" method="POST" class="space-y-4">
-                    <input type="text" placeholder="您的姓名" class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="email" placeholder="電子郵件" class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <textarea placeholder="您想去的地點？有什麼特殊要求？(例如：不吃辣、帶小孩、想去長沙喝茶顏悅色)" rows="4" class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                    <button type="submit" class="w-full bg-orange-500 text-white font-bold py-3 rounded-md hover:bg-orange-600 transition">發送登陸需求</button>
-                </form>
+    <nav class="fixed w-full bg-white shadow-sm z-50 px-6 md:px-16 py-5 flex justify-between items-center border-b border-slate-100">
+        <div class="flex items-center space-x-4">
+            <img src="tt.jpg" alt="Logo" class="h-14 w-14 object-contain">
+            <div class="flex flex-col">
+                <span class="text-2xl font-black tracking-tighter text-blue-900 serif leading-none">臺灣旅人登陸計劃</span>
+                <span class="text-[11px] tracking-widest text-slate-400 font-bold uppercase mt-1">Taiwan Traveler Landing</span>
             </div>
         </div>
+        <div class="hidden md:flex space-x-12 items-center text-slate-500 font-bold text-xl">
+            <a href="index.html" class="nav-active">首頁</a>
+            <a href="harbin.html" class="hover:text-orange-500 transition">哈爾濱 <span class="text-xs text-red-500 italic">HOT</span></a>
+            <a href="nanjing.html" class="hover:text-orange-500 transition">南京</a>
+            <a href="guizhou.html" class="hover:text-orange-500 transition">貴州</a>
+        </div>
+        <a href="#booking-form" class="bg-blue-900 text-white px-10 py-3 rounded-full font-black text-lg shadow-xl hover:bg-blue-800 transition">立即預約</a>
+    </nav>
+
+    <header class="hero-bg h-[70vh] flex flex-col items-center justify-center text-white text-center px-6 pt-20">
+        <h1 class="text-5xl md:text-7xl font-black mb-8 serif leading-tight">專屬您的私人訂製之旅</h1>
+        <p class="text-xl md:text-2xl mb-12 max-w-3xl font-light opacity-90 leading-relaxed">深耕大陸旅遊多年，為台灣旅人打造最放心的深度體驗。重新找回旅行的「松弛感」。</p>
+        <div class="flex space-x-6">
+            <a href="harbin.html" class="bg-orange-500 text-white px-12 py-5 rounded-2xl font-black text-xl shadow-2xl transition hover:scale-105">熱門TOP1行程</a>
+            <a href="#intro" class="bg-white/20 backdrop-blur-md text-white px-12 py-5 rounded-2xl font-black text-xl transition hover:bg-white/30">訂製優勢</a>
+        </div>
+    </header>
+
+    <section id="intro" class="py-24 container-custom px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-10 text-left">
+                <h2 class="text-4xl font-black text-blue-900 serif border-b-8 border-orange-500 inline-block pb-2">為什麼選擇私人訂製？</h2>
+                <p class="text-xl text-slate-600 leading-loose italic">告別團遊束縛，解決交通不便、住宿踩雷、隱形消費阱。讓您「想停就停，想玩就玩」。</p>
+                <div class="space-y-6">
+                    <div class="bg-white p-8 rounded-3xl shadow-sm feature-card">
+                        <h4 class="font-black text-2xl text-blue-900 mb-2">✨ 1v1 專屬規劃</h4>
+                        <p class="text-lg text-slate-500">行程靈活隨時調節，根據您的喜好打造，做到「我的旅行我做主」。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm feature-card border-blue-900" style="border-top-color: #1e3a8a;">
+                        <h4 class="font-black text-2xl text-blue-900 mb-2">🛡️ 全程安全保障</h4>
+                        <p class="text-lg text-slate-500">專業司導隨行，熟悉當地路況與隱藏美景，避開人潮，告別被騙風險。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm feature-card">
+                        <h4 class="font-black text-2xl text-blue-900 mb-2">💎 高品質零購物</h4>
+                        <p class="text-lg text-slate-500">純玩無強制消費，精選 4 鑽起跳優質酒店，享受豪華商務車出行。</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 全包式服務區 -->
+                <div class="bg-blue-900 text-white p-12 rounded-[3rem] shadow-2xl space-y-8">
+                    <h2 class="text-4xl font-black serif italic underline decoration-orange-500 underline-offset-8">專為台灣旅客打造的<br>「全包式」服務</h2>
+                    <p class="text-blue-100">我們理解跨岸旅遊的繁瑣，因此提供一站式代辦，讓您拎包即可出發：</p>
+                    <ul class="space-y-4 text-lg">
+                        <li>• 台胞證代辦服務</li>
+                        <li>• 優惠機票訂購</li>
+                        <li>• 在地交通接送</li>
+                        <li>• 24 小時管家式服務</li>
+                    </ul>
+                    <div class="bg-white/10 p-6 rounded-2xl">
+                        <p class="text-sm italic"><span class="font-bold">小撇步：</span>從證件辦理、航線規劃到落地的每一餐、每一宿，我們全程為您解決。遇到任何差異或問題，專屬管家隨時待命。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 六步開啟夢想旅程區塊 (這部分很重要) -->
+        <section class="bg-slate-100 py-24">
+            <div class="max-w-6xl mx-auto px-6 text-center">
+                <h2 class="text-4xl font-black text-blue-900 serif mb-16 underline decoration-orange-500 underline-offset-8">六步開啟夢想旅程</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-3xl shadow-sm">
+                        <div class="text-4xl font-black text-orange-500 mb-4">01</div>
+                        <h4 class="font-bold text-xl mb-2">互相了解</h4>
+                        <p class="text-slate-500 text-sm">聯繫我們，溝通初步意向與想去的景點。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm">
+                        <div class="text-4xl font-black text-orange-500 mb-4">02</div>
+                        <h4 class="font-bold text-xl mb-2">初步定制</h4>
+                        <p class="text-slate-500 text-sm">根據需求，為您出具初版行程方案。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm">
+                        <div class="text-4xl font-black text-orange-500 mb-4">03</div>
+                        <h4 class="font-bold text-xl mb-2">確定細節</h4>
+                        <p class="text-slate-500 text-sm">挑選酒店檔次、車型及深度體驗項目。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm">
+                        <div class="text-4xl font-black text-orange-500 mb-4">04</div>
+                        <h4 class="font-bold text-xl mb-2">行程報價</h4>
+                        <p class="text-slate-500 text-sm">透明報價，明確各項服務內容。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm">
+                        <div class="text-4xl font-black text-orange-500 mb-4">05</div>
+                        <h4 class="font-bold text-xl mb-2">簽訂合同</h4>
+                        <p class="text-slate-500 text-sm">簽署正規電子合同，保障雙方權益。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border-2 border-orange-500">
+                        <div class="text-4xl font-black text-orange-500 mb-4">06</div>
+                        <h4 class="font-bold text-xl mb-2">開啟旅程</h4>
+                        <p class="text-slate-500 text-sm">建立專屬服務群，旅行管家全程陪伴。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    <!-- 聯絡表單區塊 -->
+    <section id="booking-form" class="py-24 max-w-4xl mx-auto px-6">
+        <div class="bg-blue-900 rounded-[3.5rem] p-12 text-white text-center shadow-2xl">
+            <h3 class="text-4xl font-black mb-10 serif italic underline decoration-orange-500 underline-offset-8">立即開啟您的專屬訂製</h3>
+            <form id="tour-form" class="space-y-8 text-left">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-lg mb-2 font-bold">您的姓名 (必填)</label>
+                        <input type="text" id="user-name" required class="w-full p-5 rounded-2xl text-slate-800 outline-none">
+
+                    </div>
+                    <div>
+                        <label class="block text-lg mb-2 font-bold">聯繫方式 / Line (必填)</label>
+                        <input type="text" id="user-contact" required class="w-full p-5 rounded-2xl text-slate-800 outline-none">
+
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-lg mb-2 font-bold">客製服務</label>
+                    <textarea id="user-demand" rows="4" placeholder="請輸入您的行程需求..." class="w-full p-5 rounded-2xl text-slate-800 outline-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-orange-500 text-white py-6 rounded-2xl font-black text-3xl shadow-xl hover:bg-orange-600 transition ">送出諮詢並解鎖行程</button>
+            </form>
+        </div>
     </section>
 
-    <footer class="py-10 text-center text-gray-400 text-sm">
-        © 2026 臺灣旅人登陸計劃 - 淡江大學 AI-1A 第五組
+    <script>
+        // 監聽表單送出事件
+        document.getElementById('tour-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const demand = document.getElementById('user-demand').value;
+        
+            // 簡單的關鍵字跳轉邏輯
+            if (demand.includes("解鎖南京")) {
+                window.location.href = "nanjing.html?unlock=true#day4";
+            } else if (demand.includes("解鎖貴州")) {
+                window.location.href = "guizhou.html?unlock=true#day4";
+            } else {
+                alert("諮詢已送出！我們的訂製師將儘速與您聯繫。");
+            }
+        });
+    </script>
+    
+    <footer class="py-12 text-center text-slate-400 text-sm border-t bg-slate-50">
+        © 2026 臺灣旅人登陸計劃 
     </footer>
-
 </body>
 </html>

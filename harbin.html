@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哈爾濱：北國冰雪奇緣 - 臺灣旅人登陸計劃</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&family=Noto+Sans+TC:wght@400;700;900&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; scroll-behavior: smooth; }
+        .serif { font-family: 'Noto Serif TC', serif; }
+        .nav-active { color: #f97316; font-weight: 900; }
+        .container-custom { max-width: 1200px; margin: 0 auto; }
+        .day-block { border-bottom: 2px solid #f1f5f9; padding-bottom: 4rem; margin-bottom: 4rem; }
+        .highlight { color: #1e3a8a; font-weight: 900; }
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+    <!-- 統一導覽列 -->
+    <nav class="fixed w-full bg-white shadow-sm z-50 px-6 md:px-16 py-5 flex justify-between items-center border-b border-slate-100">
+        <div class="flex items-center space-x-4">
+            <img src="tt.jpg" alt="Logo" class="h-14 w-14 object-contain">
+            <div class="flex flex-col text-left">
+                <span class="text-2xl font-black tracking-tighter text-blue-900 serif leading-none">臺灣旅人登陸計劃</span>
+                <span class="text-[11px] tracking-widest text-slate-400 font-bold uppercase mt-1">Taiwan Traveler Landing</span>
+            </div>
+        </div>
+        <div class="hidden md:flex space-x-12 items-center text-slate-500 font-bold text-xl">
+            <a href="index.html" class="hover:text-orange-500 transition">首頁</a>
+            <a href="harbin.html" class="nav-active">哈爾濱 <span class="text-xs text-red-500 italic">HOT</span></a>
+            <a href="nanjing.html" class="hover:text-orange-500 transition font-bold">南京</a>
+            <a href="guizhou.html" class="hover:text-orange-500 transition font-bold">貴州</a>
+        </div>
+        <a href="index.html#booking-form" class="bg-blue-900 text-white px-10 py-3 rounded-full font-black text-lg shadow-xl hover:bg-blue-800 transition">立即預約</a>
+    </nav>
+
+    <main class="pt-48 pb-24 container-custom px-8">
+        <!-- 宣傳影片預留區 -->
+        <div class="mb-16 aspect-video bg-black rounded-[3.5rem] shadow-2xl overflow-hidden">
+            <!-- 請將下方 src 替換為您的宣傳片連結 -->
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/您的影片ID?autoplay=1&mute=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!-- 標題區塊 -->
+        <div class="mb-20 text-left">
+            <h2 class="text-6xl font-black text-blue-900 mb-6 serif tracking-tighter leading-tight">哈爾濱：北國冰雪奇緣</h2>
+            <p class="text-3xl text-orange-500 font-black italic border-l-[12px] border-orange-500 pl-8 leading-relaxed">主推深度行程：零下 30 度的極致浪漫</p>
+        </div>
+
+        <div class="space-y-16">
+            <!-- Day 1 -->
+            <div class="day-block grid md:grid-cols-2 gap-12 items-center text-left">
+                <div class="space-y-8">
+                    <h3 class="text-4xl font-black text-blue-900 serif italic underline decoration-orange-500 underline-offset-8">DAY 01 : 馳騁亞布力雪場</h3>
+                    <ul class="space-y-6 text-2xl text-slate-700 leading-relaxed font-medium">
+                        <li>📍 <span class="highlight">亞布力滑雪場：</span> 中國頂級雪場，初中高級雪道齊全。新手推薦請教練帶領，坐纜車上山頂俯瞰林海雪原。</li>
+                        <li>🍽️ <span class="highlight">晚餐必吃：</span> 鐵鍋燉大鵝，鵝肉軟爛入味，搭配貼玉米餅子與粉條乾豆角，暖心又暖胃。</li>
+                    </ul>
+                </div>
+                <img src="hrb_1.jpg" alt="亞布力雪場" class="rounded-[3rem] shadow-2xl h-[400px] w-full object-cover border-4 border-white">
+            </div>
+
+            <!-- Day 2 -->
+            <div class="day-block grid md:grid-cols-2 gap-12 items-center text-left">
+                <div class="order-2 md:order-1">
+                    <img src="hrb_2.jpg" alt="雪鄉馬拉爬犁" class="rounded-[3rem] shadow-2xl h-[400px] w-full object-cover border-4 border-white">
+                </div>
+                <div class="space-y-8 order-1 md:order-2">
+                    <h3 class="text-4xl font-black text-blue-900 serif italic underline decoration-orange-500 underline-offset-8">DAY 02 : 童話雪鄉與霧凇風景</h3>
+                    <ul class="space-y-6 text-2xl text-slate-700 leading-relaxed font-medium ml-4">
+                        <li>🐎 <span class="highlight">馬拉爬犁：</span> 蓋著花棉襖毯子穿過白樺林，體驗最道地的東北老味道。</li>
+                        <li>📸 <span class="highlight">亞雪公路：</span> 沿途欣賞霧凇雪掛，並於雪韻大街觀賞著名的「雪蘑菇」。</li>
+                        <li>🍽️ <span class="highlight">晚餐特色：</span> 民宿酸菜燉粉條、粘豆包，餐後吸上一顆清涼解膩的凍梨。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="day-block grid md:grid-cols-2 gap-12 items-center text-left">
+                <div class="space-y-8">
+                    <h3 class="text-4xl font-black text-blue-900 serif italic underline decoration-orange-500 underline-offset-8">DAY 03 : 晨曦雪鄉與冰雪大世界</h3>
+                    <ul class="space-y-6 text-2xl text-slate-700 leading-relaxed font-medium">
+                        <li>🏙️ <span class="highlight">返回市區：</span> 傍晚抵達哈爾濱，晚餐品嚐金黃酥脆、酸甜衝鼻的經典鍋包肉。</li>
+                        <li>🏰 <span class="highlight">晚間推薦：</span> 冰雪大世界，親身體驗冰雕滑梯的視覺震撼（冬季限定）。</li>
+                    </ul>
+                </div>
+                <img src="hrb_3.jpg" alt="雪鄉晨景" class="rounded-[3rem] shadow-2xl h-[400px] w-full object-cover border-4 border-white">
+            </div>
+
+            <!-- Day 4 -->
+            <div class="day-block grid md:grid-cols-2 gap-12 items-center text-left">
+                <div class="order-2 md:order-1">
+                    <img src="hrb_4.jpg" alt="哈爾濱大雪人" class="rounded-[3rem] shadow-2xl h-[400px]  w-full object-cover border-4 border-white">
+                </div>
+                <div class="space-y-8 order-1 md:order-2">
+                    <h3 class="text-4xl font-black text-blue-900 serif italic underline decoration-orange-500 underline-offset-8">DAY 04 : 大雪人與松花江冰上趣</h3>
+                    <ul class="space-y-6 text-2xl text-slate-700 leading-relaxed font-medium ml-4">
+                        <li>⛄ <span class="highlight">打卡雪人：</span> 音樂公園 18 米紅圍脖大雪人，隨後漫步中央大街必啃馬迭爾冰棍。</li>
+                        <li>❄️ <span class="highlight">松花江冰面：</span> 體驗狗拉爬犁、長冰滑梯及驚險刺激的冰上氣墊船。</li>
+                        <li>🍽️ <span class="highlight">晚餐推薦：</span> 老昌春餅或華梅西餐廳，品嚐正統俄式罐燜牛肉。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="day-block grid md:grid-cols-2 gap-12 items-center text-left border-none">
+                <div class="space-y-8">
+                    <h3 class="text-4xl font-black text-blue-900 serif italic underline decoration-orange-500 underline-offset-8">DAY 05 : 聖索菲亞教堂與極地演出</h3>
+                    <ul class="space-y-6 text-2xl text-slate-700 leading-relaxed font-medium">
+                        <li>⛪ <span class="highlight">教堂巡禮：</span> 參觀聖索菲亞大教堂壁畫，傍晚拍攝鴿子飛過的經典夜景。</li>
+                        <li>🥩 <span class="highlight">午餐盛宴：</span> 金剛山燒烤，本地排隊名店，必吃烤串搭配熱騰騰的疙瘩湯。</li>
+                        <li>🐋 <span class="highlight">下午可選：</span> 東北虎林園觀虎，或極地公園欣賞動人的白鯨表演。</li>
+                        <li>🥟 <span class="highlight">行程總結：</span> 東方餃子王，必點特色的酸菜油滋了與鮁魚餡餃子。</li>
+                    </ul>
+                </div>
+                <img src="hrb_5.jpg" alt="聖索菲亞教堂" class="rounded-[3rem] shadow-2xl h-[400px] w-full object-cover border-4 border-white">
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-16 text-center text-slate-400 text-xl border-t bg-slate-50">
+        © 2026 臺灣旅人登陸計劃 
+    </footer>
+</body>
+</html>
