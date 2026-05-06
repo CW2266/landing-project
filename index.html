@@ -18,8 +18,8 @@
 
     <nav class="fixed w-full bg-white shadow-sm z-50 px-6 md:px-16 py-5 flex justify-between items-center border-b border-slate-100">
         <div class="flex items-center space-x-4">
-            <img src="tt.jpg" alt="Logo" class="h-14 w-14 object-contain">
-            <div class="flex flex-col">
+            <img src="tt.png" alt="Logo" class="h-16 w-auto object-contain"> 
+            <div class="flex flex-col justify-center">
                 <span class="text-2xl font-black tracking-tighter text-blue-900 serif leading-none">臺灣旅人登陸計劃</span>
                 <span class="text-[11px] tracking-widest text-slate-400 font-bold uppercase mt-1">Taiwan Traveler Landing</span>
             </div>
@@ -35,7 +35,7 @@
 
     <header class="hero-bg h-[70vh] flex flex-col items-center justify-center text-white text-center px-6 pt-20">
         <h1 class="text-5xl md:text-7xl font-black mb-8 serif leading-tight">專屬您的私人訂製之旅</h1>
-        <p class="text-xl md:text-2xl mb-12 max-w-3xl font-light opacity-90 leading-relaxed">深耕大陸旅遊多年，為台灣旅人打造最放心的深度體驗。重新找回旅行的「松弛感」。</p>
+        <p class="text-xl md:text-2xl mb-12 max-w-3xl font-light opacity-90 leading-relaxed">深耕大陸旅遊多年，為台灣旅人打造最放心的深度體驗，重新找回旅行的「松弛感」。</p>
         <div class="flex space-x-6">
             <a href="harbin.html" class="bg-orange-500 text-white px-12 py-5 rounded-2xl font-black text-xl shadow-2xl transition hover:scale-105">熱門TOP1行程</a>
             <a href="#intro" class="bg-white/20 backdrop-blur-md text-white px-12 py-5 rounded-2xl font-black text-xl transition hover:bg-white/30">訂製優勢</a>
@@ -79,7 +79,7 @@
             </div>
         </section>
 
-        <!-- 六步開啟夢想旅程區塊 (這部分很重要) -->
+        <!-- 六步開啟夢想旅程區塊 -->
         <section class="bg-slate-100 py-24">
             <div class="max-w-6xl mx-auto px-6 text-center">
                 <h2 class="text-4xl font-black text-blue-900 serif mb-16 underline decoration-orange-500 underline-offset-8">六步開啟夢想旅程</h2>
@@ -127,38 +127,64 @@
                 <div class="grid md:grid-cols-2 gap-8">
                     <div>
                         <label class="block text-lg mb-2 font-bold">您的姓名 (必填)</label>
-                        <input type="text" id="user-name" required class="w-full p-5 rounded-2xl text-slate-800 outline-none">
-
+                        <input type="text" id="user-name" name="name" required class="w-full p-5 rounded-2xl text-slate-800 outline-none">
                     </div>
                     <div>
                         <label class="block text-lg mb-2 font-bold">聯繫方式 / Line (必填)</label>
-                        <input type="text" id="user-contact" required class="w-full p-5 rounded-2xl text-slate-800 outline-none">
-
+                        <input type="text" id="user-contact" name="contact" required class="w-full p-5 rounded-2xl text-slate-800 outline-none">
                     </div>
                 </div>
                 <div>
                     <label class="block text-lg mb-2 font-bold">客製服務</label>
-                    <textarea id="user-demand" rows="4" placeholder="請輸入您的行程需求..." class="w-full p-5 rounded-2xl text-slate-800 outline-none"></textarea>
+                    <textarea id="user-demand" name="demand" rows="4" placeholder="請輸入您的行程需求 (輸入「解鎖南京」或「解鎖貴州」以解鎖行程)..." class="w-full p-5 rounded-2xl text-slate-800 outline-none"></textarea>
                 </div>
-                <button type="submit" class="w-full bg-orange-500 text-white py-6 rounded-2xl font-black text-3xl shadow-xl hover:bg-orange-600 transition ">送出諮詢並解鎖行程</button>
+                <button type="submit" id="submit-btn" class="w-full bg-orange-500 text-white py-6 rounded-2xl font-black text-3xl shadow-xl hover:bg-orange-600 transition ">送出諮詢並解鎖行程</button>
             </form>
         </div>
     </section>
 
     <script>
-        // 監聽表單送出事件
         document.getElementById('tour-form').addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            const btn = document.getElementById('submit-btn');
+            const name = document.getElementById('user-name').value;
+            const contact = document.getElementById('user-contact').value;
             const demand = document.getElementById('user-demand').value;
-        
-            // 簡單的關鍵字跳轉邏輯
-            if (demand.includes("解鎖南京")) {
-                window.location.href = "nanjing.html?unlock=true#day4";
-            } else if (demand.includes("解鎖貴州")) {
-                window.location.href = "guizhou.html?unlock=true#day4";
-            } else {
-                alert("諮詢已送出！我們的訂製師將儘速與您聯繫。");
-            }
+            
+            // 填入您的 Google Apps Script 部署網址
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbys5Hjbjrb-rTFxoog85v9qjlsyUQLYL_0m7bGw9SfbtmLEpqmmOsP_wqu_nQWUkD8zQQ/exec';
+            
+            btn.innerText = "資料傳送中...";
+            btn.disabled = true;
+
+            // 準備傳送資料
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('contact', contact);
+            formData.append('demand', demand);
+
+            fetch(scriptURL, { 
+                method: 'POST', 
+                body: formData 
+            })
+            .then(response => {
+                // 資料成功存入試算表後，根據關鍵字跳轉
+                if (demand.includes("解鎖南京")) {
+                    window.location.href = "nanjing.html?unlock=true#day4";
+                } else if (demand.includes("解鎖貴州")) {
+                    window.location.href = "guizhou.html?unlock=true#day4";
+                } else {
+                    alert("諮詢已送出！我們的訂製師將儘速與您聯繫。");
+                    location.reload();
+                }
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert("傳送失敗，請稍後再試。");
+                btn.innerText = "重新送出需求";
+                btn.disabled = false;
+            });
         });
     </script>
     
